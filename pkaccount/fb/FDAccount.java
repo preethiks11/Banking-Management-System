@@ -20,7 +20,7 @@ this.period=period;
 public double calc_interest()
 {
 System.out.println("Balance:"+balance);
-double interest=balance*period*fdrate/(12*100);
+double interest=balance*period*fdrate/12;
 balance=balance+interest;
 System.out.println("New Balance:"+balance);
 return interest;
