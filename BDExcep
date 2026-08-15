@@ -1,6 +1,6 @@
 import pkbanking1.pkcustomer.*;
 import java.util.*;
-class Bankingdemo
+class BankingDemo
 {
 static int cust_id=1234;
 public static void main(String arg[])
