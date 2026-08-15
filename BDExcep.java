@@ -1,0 +1,113 @@
+import pkbanking1.pkcustomer.*;
+import java.util.*;
+class BDExcep
+{
+static int cust_id=1234;
+public static void main(String arg[])
+{
+String name;
+String address;
+int ch1,ch2,ch3,i=0,id;
+
+Customer c[]=new Customer[5];
+Scanner sc=new Scanner(System.in);
+
+do     //do--1
+{
+System.out.println("           SIMREN BANK LIMITED   ");
+System.out.println("SB Account---1");
+System.out.println("FD Account----2");
+System.out.println("Exit-----3");
+System.out.println("Enter your choice:");
+ch1=sc.nextInt();
+switch(ch1)
+{
+case 1:
+do
+{
+ System.out.println("          SIMREN BANK LIMITED    ");
+ System.out.println("New SB Account ---1");
+ System.out.println("Deposit----2");
+ System.out.println("Withdraw----3");
+ System.out.println("Interest----4");
+ System.out.println("Exit----5");
+ System.out.println("ENter your choice:");
+ ch2=sc.nextInt();
+ switch(ch2)
+ {
+  case 1:
+    System.out.println("Enter Your name:");
+    name=sc.next();
+    System.out.println("Enter Your Address:");
+    address=sc.next();
+    System.out.println("Your Customer id :"+cust_id);
+    c[i]=new Customer(cust_id,name,address); 
+    c[i].createAccount(1); 
+    cust_id++;
+    i++;
+    break;
+  case 2:
+    System.out.println("Enter customer id:");
+    id=sc.nextInt();
+    c[id-1234].transaction(1);
+    break;
+  case 3:
+    System.out.println("Enter customer id:");
+    id=sc.nextInt();
+    c[id-1234].transaction(2);
+    break;
+  case 4:
+    System.out.println("Enter customer id:");
+    id=sc.nextInt();
+    c[id-1234].transaction(3);
+    break;
+  case 5:
+    break;
+  default:
+     System.out.println("Invalid choice");
+ }
+ }while(ch2!=5); 
+ break;
+
+case 2:
+
+   do
+   {
+   System.out.println("       SIMREN BANK LIMITED    ");
+   System.out.println("FD Account");
+   System.out.println("Create New Fd Account----1");
+   System.out.println("close FD Account---2");
+   System.out.println("Exit-----3");
+   System.out.println("Enter your choice:");
+   ch3=sc.nextInt();
+   switch(ch3)
+   {
+    case 1:
+    System.out.println("Enter Your name:");
+    name=sc.next();
+    System.out.println("Enter Your Address:");
+    address=sc.next();
+    System.out.println("Your Customer id :"+cust_id);
+    c[i]=new Customer(cust_id,name,address); 
+    c[i].createAccount(2); 
+    cust_id++;
+    i++;
+    break;
+    case 2:
+    System.out.println("Enter your customer id:");
+    id=sc.nextInt();  
+    c[id-1234].transaction(4); 
+    break; 
+    }
+    }while(ch3!=3);
+    break;
+ 
+case 3:
+ break;
+default:
+ System.out.println("Invalid Choice");
+
+}
+}while(ch1!=3);
+}
+}
