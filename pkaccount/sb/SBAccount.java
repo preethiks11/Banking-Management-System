@@ -1,0 +1,49 @@
+package pkbanking1.pkaccount.sb;
+import pkbanking1.pkinterface.*;
+import pkbanking1.pkaccount.Account;
+import pkbankings.pkexception.*;
+
+public  class SBAccount extends Account implements Transaction,InterestRate
+{
+
+public SBAccount()
+{
+super();
+}
+public SBAccount(int accnumber,double balance)
+{
+super(accnumber,balance);
+}
+
+public void deposit(double amount)
+{
+if(amount>0)
+{
+System.out.println("Balance:"+balance);
+balance+=amount;
+System.out.println("New balance:"+balance);
+}
+else
+System.out.println("Ivalid amount");
+}
+
+public void withdraw(double amount)	
+{
+if(balance-amount>min_balance)
+{
+System.out.println("Balance:"+balance);
+balance-=amount;
+System.out.println("New balance:"+balance);
+}
+else
+System.out.println("Ivalid,Minimum balance is less than 500");
+}
+
+public void calc_interest()
+{
+double interest=balance*sbrate/12;
+balance+=interest;
+System.out.println("Interes:"+interest);
+System.out.println("Balance amount with interest:"+balance);
+}
+}
